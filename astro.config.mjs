@@ -1,8 +1,18 @@
-import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind'
+import { defineConfig } from 'astro/config'
+import { resolve } from 'path'
+import { fileURLToPath } from 'url'
 
-import tailwind from "@astrojs/tailwind";
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()]
-});
+  integrations: [tailwind()],
+  vite: {
+    resolve: {
+      alias: {
+        '@': resolve(__dirname, 'src'),
+      },
+    },
+  },
+})
