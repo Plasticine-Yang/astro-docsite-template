@@ -1,0 +1,15 @@
+html[data-mode='light'] {
+  --pa-c-bg: #ffffff;
+  --pa-c-text: #3c3c42;
+}
+
+html[data-mode='dark'] {
+  --pa-c-bg: #1e1e20;
+  --pa-c-text: rgba(255, 255, 245, 0.86);
+}
+
+body {
+  background: var(--pa-c-bg);
+  color: var(--pa-c-text);
+  transition: background 0.5s ease, color 0.5s ease;
+}

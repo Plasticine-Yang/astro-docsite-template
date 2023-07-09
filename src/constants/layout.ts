@@ -1,0 +1,1 @@
+export const DEFAULT_FOOTER_INFO = 'Copyright © 2023-present Plasticine'
