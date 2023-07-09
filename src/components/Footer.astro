@@ -1,0 +1,13 @@
+---
+import { DEFAULT_FOOTER_INFO } from '@/constants'
+
+export interface Props {
+  footerInfo?: string
+}
+
+const { footerInfo = DEFAULT_FOOTER_INFO } = Astro.props
+---
+
+<footer class="flex justify-center items-center p-8">
+  {footerInfo}
+</footer>
