@@ -1,3 +1,4 @@
+import react from '@astrojs/react'
 import tailwind from '@astrojs/tailwind'
 import { defineConfig } from 'astro/config'
 import { resolve } from 'path'
@@ -7,7 +8,7 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()],
+  integrations: [react(), tailwind()],
   vite: {
     resolve: {
       alias: {
