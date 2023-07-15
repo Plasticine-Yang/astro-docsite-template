@@ -52,7 +52,7 @@ const Switch: FC<SwitchProps> = (props) => {
 
   return (
     <button className={clsx(styles.switch, className)} onClick={handleCheckedChange}>
-      <span className={styles['switch__wrapper']} style={{ transform: cssTransform }}>
+      <span className={clsx('switch__wrapper', styles['switch__wrapper'])} style={{ transform: cssTransform }}>
         {icon !== undefined ? icon : null}
       </span>
     </button>

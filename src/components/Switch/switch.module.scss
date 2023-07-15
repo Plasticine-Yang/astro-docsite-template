@@ -5,6 +5,10 @@
   border: 1px solid #48484d;
   border-radius: 12px;
 
+  &:hover {
+    border-color: #8e8e93;
+  }
+
   &__wrapper {
     display: flex;
     justify-content: center;
