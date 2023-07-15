@@ -3,7 +3,7 @@ import { ReactNode, useMemo, useState, type FC } from 'react'
 import { useMemoizedFn } from 'ahooks'
 import clsx from 'clsx'
 
-import styles from './styles.module.scss'
+import styles from './switch.module.scss'
 
 /** 开关开启时的 wrapper 水平位移距离 */
 export const CHECKED_WRAPPER_TRANSLATE_X = '18px'
