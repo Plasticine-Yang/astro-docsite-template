@@ -1,0 +1,21 @@
+.dark-mode-switch {
+  background: #f6f6f7;
+  border-color: rgba(60, 60, 67, 0.29);
+
+  :global {
+    .switch__wrapper {
+      background: #ffffff;
+    }
+  }
+
+  &--dark {
+    background: #313136;
+    border-color: rgba(82, 82, 89, 0.68);
+
+    :global {
+      .switch__wrapper {
+        background: #000000;
+      }
+    }
+  }
+}

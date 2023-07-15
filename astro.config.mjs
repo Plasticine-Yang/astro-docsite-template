@@ -15,5 +15,8 @@ export default defineConfig({
         '@': resolve(__dirname, 'src'),
       },
     },
+    css: {
+      devSourcemap: true,
+    },
   },
 })
