@@ -1,0 +1,10 @@
+.divider {
+  background: #e7e7e8;
+  transition: background 0.5s;
+}
+
+html[data-mode='dark'] {
+  .divider {
+    background: #2e2e32;
+  }
+}
