@@ -1,22 +1,30 @@
-import { useMemo, useState, type FC } from 'react'
+import { ReactNode, useMemo, useState, type FC } from 'react'
 
 import { useMemoizedFn } from 'ahooks'
 import clsx from 'clsx'
 
-import { CHECKED_WRAPPER_TRANSLATE_X } from './constants'
-import { useSwitchColor } from './hooks'
 import styles from './styles.module.scss'
-import type { SwitchProps } from './types'
+
+/** 开关开启时的 wrapper 水平位移距离 */
+export const CHECKED_WRAPPER_TRANSLATE_X = '18px'
+
+export interface SwitchProps {
+  /** 开关是否打开 */
+  checked?: boolean
+  /** 非受控模式下默认是否启用开关 */
+  defaultChecked?: boolean
+  /** 开关的图标 */
+  icon?: ReactNode
+  /** className 透传 */
+  className?: string
+  /** checked 的值变化 */
+  onCheckedChange?: (nextChecked: boolean) => void
+}
 
 const Switch: FC<SwitchProps> = (props) => {
-  const { className, checked, defaultChecked, backgroundColor, wrapperColor, icon, onCheckedChange } = props
+  const { className, checked, defaultChecked, icon, onCheckedChange } = props
 
   const [internalChecked, setInternalChecked] = useState(checked ?? defaultChecked ?? false)
-  const { resolvedBackgroundColor, resolvedWrapperColor } = useSwitchColor({
-    checked: internalChecked,
-    backgroundColor,
-    wrapperColor,
-  })
 
   const handleCheckedChange = useMemoizedFn(() => {
     if (checked !== undefined) {
@@ -43,15 +51,8 @@ const Switch: FC<SwitchProps> = (props) => {
   }, [internalChecked])
 
   return (
-    <button
-      className={clsx(styles.switch, className)}
-      onClick={handleCheckedChange}
-      style={{ backgroundColor: resolvedBackgroundColor }}
-    >
-      <span
-        className={styles['switch__wrapper']}
-        style={{ backgroundColor: resolvedWrapperColor, transform: cssTransform }}
-      >
+    <button className={clsx(styles.switch, className)} onClick={handleCheckedChange}>
+      <span className={styles['switch__wrapper']} style={{ transform: cssTransform }}>
         {icon !== undefined ? icon : null}
       </span>
     </button>
