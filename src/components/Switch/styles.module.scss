@@ -1,0 +1,20 @@
+.switch {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  border: 1px solid #48484d;
+  border-radius: 12px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: transform 0.25s;
+  }
+}
